@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prabhjot Singh | Full Stack Developer</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #111416;
+      --bg-soft: #1d2427;
+      --text-main: #f4f7f5;
+      --text-muted: #b8c4be;
+      --accent: #f0b23f;
+      --accent-2: #4ec0b5;
+      --card-border: rgba(255, 255, 255, 0.14);
+      --card-bg: rgba(255, 255, 255, 0.04);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: radial-gradient(circle at 15% 15%, #2a3738 0%, transparent 40%),
+                  radial-gradient(circle at 85% 0%, #3f2f1d 0%, transparent 35%),
+                  linear-gradient(160deg, var(--bg-deep), #0f1214 60%, #10181b 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .accent-line {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(7px);
+    }
+
+    .chip {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 650ms ease, transform 650ms ease;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-shape {
+      animation: float 9s ease-in-out infinite;
+    }
+
+    .hero-shape.s2 {
+      animation-delay: -2.5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(2deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="relative">
+    <div class="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-amber-300/10 blur-2xl hero-shape"></div>
+    <div class="absolute top-28 right-0 w-72 h-72 rounded-full bg-teal-300/10 blur-3xl hero-shape s2"></div>
+
+    <section class="min-h-screen px-5 py-7 md:px-10 lg:px-16 max-w-6xl mx-auto flex flex-col">
+      <header class="flex items-center justify-between mb-14 reveal" style="--delay: 80ms;">
+        <p class="text-sm md:text-base text-white/90 tracking-wide">Prabhjot Singh</p>
+        <a href="#contact" class="glass-card px-4 py-2 rounded-full text-sm hover:bg-white/10 transition">Book a quick intro</a>
+      </header>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center flex-1">
+        <div class="space-y-6 reveal" style="--delay: 160ms;">
+          <p class="inline-flex items-center gap-2 glass-card rounded-full px-3 py-1 text-sm text-white/90">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Open to full-time and freelance projects
+          </p>
+
+          <h1 class="text-4xl md:text-6xl leading-tight font-bold max-w-xl">
+            I build <span class="accent-line">reliable web products</span> that help teams ship faster.
+          </h1>
+
+          <p class="text-lg text-[color:var(--text-muted)] max-w-xl">
+            Full Stack Developer focused on clean architecture, practical UX, and measurable outcomes for SaaS and internal platforms.
+          </p>
+
+          <p id="typing" class="text-base md:text-lg text-amber-200 h-7"></p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="assets/resume.pdf" download class="px-6 py-3 rounded-full font-semibold bg-amber-300 text-slate-900 hover:bg-amber-200 transition">
+              Download CV
+            </a>
+            <a href="https://github.com/prabh234" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold border border-white/30 hover:bg-white/10 transition">
+              View GitHub
+            </a>
+            <a href="mailto:prabhsingh99153@gmail.com" class="px-6 py-3 rounded-full font-semibold border border-teal-300/50 text-teal-200 hover:bg-teal-300/10 transition">
+              Email Me
+            </a>
+          </div>
+        </div>
+
+        <aside class="glass-card rounded-3xl p-6 md:p-8 reveal" style="--delay: 260ms;">
+          <div class="flex flex-col items-center text-center gap-4">
+            <img src="assets/profile.png" alt="Prabhjot profile photo" class="w-36 h-36 rounded-2xl object-cover border border-white/25 shadow-lg"/>
+            <h2 class="text-2xl font-bold">Pitch Snapshot</h2>
+            <ul class="text-left w-full text-[color:var(--text-muted)] space-y-3">
+              <li class="glass-card rounded-xl px-4 py-3">2+ years building production-ready web apps.</li>
+              <li class="glass-card rounded-xl px-4 py-3">Strong in Next.js, React, Node.js, and SQL systems.</li>
+              <li class="glass-card rounded-xl px-4 py-3">MCA candidate with 9.4 CGPA and hands-on delivery experience.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-10 lg:px-16 pb-12 max-w-6xl mx-auto reveal" style="--delay: 100ms;">
+      <div class="grid sm:grid-cols-3 gap-4">
+        <article class="glass-card rounded-2xl p-5">
+          <p class="text-sm text-[color:var(--text-muted)]">Delivery Focus</p>
+          <p class="text-2xl font-bold mt-1">Feature to production</p>
+          <p class="text-sm text-[color:var(--text-muted)] mt-2">Structured releases with clear ownership and clean handoff.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <p class="text-sm text-[color:var(--text-muted)]">Communication</p>
+          <p class="text-2xl font-bold mt-1">Client-friendly updates</p>
+          <p class="text-sm text-[color:var(--text-muted)] mt-2">Transparent status reporting and practical technical translation.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <p class="text-sm text-[color:var(--text-muted)]">Velocity</p>
+          <p class="text-2xl font-bold mt-1">Rapid execution</p>
+          <p class="text-sm text-[color:var(--text-muted)] mt-2">Fast prototyping and quality-focused iteration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-10 lg:px-16 py-14 max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="reveal" style="--delay: 80ms;">
+          <h2 class="text-3xl font-bold mb-5">What I Bring to Your Team</h2>
+          <ul class="space-y-3 text-[color:var(--text-muted)]">
+            <li class="glass-card rounded-xl p-4">Design and develop modern full-stack apps with reusable architecture.</li>
+            <li class="glass-card rounded-xl p-4">Improve product usability with focused UI and conversion-centered flows.</li>
+            <li class="glass-card rounded-xl p-4">Collaborate smoothly with product, design, and business stakeholders.</li>
+          </ul>
+        </div>
+
+        <div class="reveal" style="--delay: 160ms;">
+          <h2 class="text-3xl font-bold mb-5">Core Stack</h2>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip rounded-full px-4 py-2 text-sm">React</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">Next.js</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">TypeScript</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">Node.js</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">MySQL</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">MongoDB</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">Prisma</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">Tailwind CSS</span>
+            <span class="chip rounded-full px-4 py-2 text-sm">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-10 lg:px-16 py-14 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-7 reveal">Selected Work</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="glass-card rounded-2xl p-6 reveal" style="--delay: 60ms;">
+          <h3 class="text-2xl font-semibold">Workforce BMS</h3>
+          <p class="mt-2 text-[color:var(--text-muted)]">Bench Management platform with role-based access, analytics dashboards, and advanced talent search.</p>
+          <p class="mt-4 text-sm text-amber-200">Impact: Better visibility into utilization and faster internal staffing decisions.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-6 reveal" style="--delay: 120ms;">
+          <h3 class="text-2xl font-semibold">EventMinder</h3>
+          <p class="mt-2 text-[color:var(--text-muted)]">Event management system with face recognition and QR-based attendance workflows.</p>
+          <p class="mt-4 text-sm text-amber-200">Impact: Reduced manual check-in and improved attendance tracking accuracy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-10 lg:px-16 py-14 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-7 reveal">Experience</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="glass-card rounded-2xl p-6 reveal" style="--delay: 80ms;">
+          <p class="text-sm text-[color:var(--text-muted)]">2025 - Present</p>
+          <h3 class="text-xl font-semibold mt-1">Frontend Developer Intern</h3>
+          <p class="text-[color:var(--text-muted)] mt-1">ITBD</p>
+          <p class="mt-3 text-sm text-[color:var(--text-muted)]">Contributing to production features, UI quality improvements, and maintainable frontend workflows.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-6 reveal" style="--delay: 140ms;">
+          <p class="text-sm text-[color:var(--text-muted)]">Freelance</p>
+          <h3 class="text-xl font-semibold mt-1">Web Developer</h3>
+          <p class="text-[color:var(--text-muted)] mt-1">WordPress and custom web projects</p>
+          <p class="mt-3 text-sm text-[color:var(--text-muted)]">Delivered client websites with a focus on clarity, responsive UX, and faster launch cycles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="px-5 md:px-10 lg:px-16 pb-16 pt-6 max-w-6xl mx-auto reveal" style="--delay: 80ms;">
+      <div class="glass-card rounded-3xl p-8 md:p-10 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Let us build your next product milestone.</h2>
+        <p class="text-[color:var(--text-muted)] mt-3 max-w-2xl mx-auto">If you are hiring or pitching a new product build, I can support planning, execution, and delivery with clear communication.</p>
+        <div class="flex flex-wrap justify-center gap-3 mt-7">
+          <a href="mailto:prabhjot@example.com" class="bg-teal-300 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-teal-200 transition">Start a conversation</a>
+          <a href="assets/resume.pdf" download class="border border-white/25 px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition">Get full CV</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm text-[color:var(--text-muted)]">© 2026 Prabhjot Singh. Built for strong first impressions.</footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
